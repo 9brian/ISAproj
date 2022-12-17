@@ -1,0 +1,66 @@
+*Note: We ran this on vscode, using code runner
+*coderunner was used in terminal to take an input
+
+13-bit instruction set size:
+
+4-bit opcode        0000
+6-bit instruction   000000
+3-bit register      000
+
+Up to 16 different opcodes
+0000 -> 1111
+(0)  -> 15
+
+Opcodes:
+0000 HALT   0
+0001 INPUT  1
+0010        2
+0011 PUT    3
+0100 SKIPCOND
+0101 SUM    5
+0110 STORE  6
+0111 SUBT   7
+1000        8
+1001        9
+1010 MULT   10 
+1011        11
+1100 CLEAR  12
+1101 JUMP   13
+1110 LOOP   14
+1111 OUT    15
+
+We're leaving opcodes empty for future opcode expansion and implementation.
+Instructions: Depending on the opcode, either it will read in a numerical value
+or read in a register to find
+
+Example:
+0101010011011 <- This code adds R2 and R3, storing that into R3
+0101 <- opcode for sum
+010  <- binary num is 2, thus register 2
+011  <- binary num is 3, thus reg 3
+011  <- binary num is 3, thus reg 3
+
+Example:
+0011000001001
+0011   <- Put opcode
+000001 <- bin num is 1 
+001    <- register is 1
+
+Specifiations about architecture:
+13 bit instruction set size, or 13-bit word size length 
+
+4 bit opcodes are required 
+13 < (2^4) ----> 13 < 16
+
+8 registers in total, 
+8 <= (2^3) -----> 8 <= 8
+3 bits are needed for identifying a register
+
+bits left for immediate operand is 6
+13-(4+3)= 6
+
+Size of memory is
+0 -> ((2^9)-1) words of memory
+or
+0 -> 511 words of memory
+Due to its 9 bit address and 4 bit opcode

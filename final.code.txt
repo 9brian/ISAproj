@@ -1,0 +1,11 @@
+Clear
+Input X 
+Store X R1 
+Loop    R1
+Input X 
+Store X R2 
+Add R2 R3 R3
+SKIPCOND 1
+JUMP 
+OUT R3
+HALT
